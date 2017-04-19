@@ -1826,12 +1826,14 @@ class PageViewRestriction(models.Model):
     PASSWORD = 'password'
     GROUPS = 'groups'
     LOGIN = 'login'
+    FEE_PAYED = 'fee_payed'
 
     RESTRICTION_CHOICES = (
         (NONE, _("Public")),
         (LOGIN, _("Private, accessible to logged-in users")),
         (PASSWORD, _("Private, accessible with the following password")),
         (GROUPS, _("Private, accessible to users in specific groups")),
+        (FEE_PAYED, _("Private, accessible only to users with fee payed for current year")),
     )
 
     restriction_type = models.CharField(
